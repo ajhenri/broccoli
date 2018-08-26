@@ -25,16 +25,21 @@ public class BroccoliController {
         return broccoliService.getMeal(id);
     }
 
-    @RequestMapping(value="/meals", method = RequestMethod.POST)
+    @RequestMapping(value = "/meals", method = RequestMethod.POST)
     public void addMeal(@RequestBody Meal meal){
         broccoliService.addMeal(meal);
     }
 
-    @RequestMapping(value="/schedule", params = {"startDate", "endDate"})
+    @RequestMapping(value = "/schedule", method = RequestMethod.GET, params = {"startDate", "endDate"})
     public List<Schedule> getSchedule(
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @RequestParam("startDate") LocalDate startDate,
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) @RequestParam("endDate") LocalDate endDate
     ) {
         return broccoliService.getSchedule(startDate, endDate);
+    }
+
+    @RequestMapping(value = "/schedule", method = RequestMethod.POST)
+    public void addScheduleItem(@RequestBody Schedule schedule){
+        broccoliService.addScheduleItem(schedule);
     }
 }

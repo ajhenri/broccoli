@@ -1,5 +1,9 @@
 package com.ajhenri.broccoli.schedule;
 
+import com.ajhenri.broccoli.utilities.serializers.DateDeserializer;
+import com.ajhenri.broccoli.utilities.serializers.DateSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,8 +15,12 @@ public class Schedule {
     @Getter @Setter
     private int mealId;
     @Getter @Setter
+    @JsonSerialize(using = DateSerializer.class)
+    @JsonDeserialize(using = DateDeserializer.class)
     private Date startTime;
     @Getter @Setter
+    @JsonSerialize(using = DateSerializer.class)
+    @JsonDeserialize(using = DateDeserializer.class)
     private Date endTime;
     @Getter @Setter
     private char[] colorCode;

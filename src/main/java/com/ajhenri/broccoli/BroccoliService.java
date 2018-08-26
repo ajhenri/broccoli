@@ -19,7 +19,9 @@ public class BroccoliService {
 
     @Autowired
     private MealRepository mealRepository;
+    @Autowired
     private ScheduleRepository scheduleRepository;
+    @Autowired
     private IngredientRepository ingredientRepository;
 
     public List<Meal> getAllMeals(){
