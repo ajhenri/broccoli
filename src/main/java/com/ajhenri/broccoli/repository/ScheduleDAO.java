@@ -1,4 +1,6 @@
-package com.ajhenri.broccoli.schedule;
+package com.ajhenri.broccoli.repository;
+
+import com.ajhenri.broccoli.domain.Schedule;
 
 import javax.sql.DataSource;
 import java.time.LocalDate;

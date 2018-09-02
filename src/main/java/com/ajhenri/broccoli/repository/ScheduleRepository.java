@@ -1,5 +1,7 @@
-package com.ajhenri.broccoli.schedule;
+package com.ajhenri.broccoli.repository;
 
+import com.ajhenri.broccoli.domain.Schedule;
+import com.ajhenri.broccoli.mapper.ScheduleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,7 +13,7 @@ import java.util.List;
 import java.util.Date;
 
 @Repository
-public class ScheduleRepository implements ScheduleDAO{
+public class ScheduleRepository implements ScheduleDAO {
     private DataSource dataSource;
     @Autowired
     private JdbcTemplate jdbcTemplate;

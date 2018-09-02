@@ -1,4 +1,4 @@
-package com.ajhenri.broccoli.ingredient;
+package com.ajhenri.broccoli.domain;
 
 import lombok.Getter;
 import lombok.Setter;

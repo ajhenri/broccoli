@@ -1,6 +1,6 @@
 package com.ajhenri.broccoli.utilities.serializers;
 
-import static com.ajhenri.broccoli.utilities.Constants.GLOBAL_DATE_FORMAT;
+import static com.ajhenri.broccoli.utilities.Constants.GLOBAL_DATE_TIME_FORMAT;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonDeserializer;
@@ -18,7 +18,7 @@ public class DateDeserializer extends JsonDeserializer<Date> {
             throws IOException {
         String date = p.getText();
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat(GLOBAL_DATE_FORMAT);
+            SimpleDateFormat dateFormat = new SimpleDateFormat(GLOBAL_DATE_TIME_FORMAT);
             return dateFormat.parse(date);
         } catch (ParseException e) {
             throw new RuntimeException();

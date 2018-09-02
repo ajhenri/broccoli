@@ -1,6 +1,6 @@
 package com.ajhenri.broccoli.utilities.serializers;
 
-import static com.ajhenri.broccoli.utilities.Constants.GLOBAL_DATE_FORMAT;
+import static com.ajhenri.broccoli.utilities.Constants.GLOBAL_DATE_TIME_FORMAT;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -13,7 +13,7 @@ import java.util.Date;
 public class DateSerializer extends JsonSerializer<Date> {
     @Override
     public void serialize(Date date, JsonGenerator generator, SerializerProvider provider) throws IOException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(GLOBAL_DATE_FORMAT);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(GLOBAL_DATE_TIME_FORMAT);
         String dateString = dateFormat.format(date);
         generator.writeString(dateString);
     }

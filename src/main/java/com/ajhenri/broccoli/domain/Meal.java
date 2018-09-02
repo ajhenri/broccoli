@@ -1,4 +1,4 @@
-package com.ajhenri.broccoli.meal;
+package com.ajhenri.broccoli.domain;
 
 public class Meal {
     private int id;

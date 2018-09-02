@@ -1,12 +1,12 @@
 package com.ajhenri.broccoli;
 
-import com.ajhenri.broccoli.meal.Meal;
-import com.ajhenri.broccoli.schedule.Schedule;
-import com.ajhenri.broccoli.ingredient.Ingredient;
+import com.ajhenri.broccoli.domain.Meal;
+import com.ajhenri.broccoli.domain.Schedule;
+import com.ajhenri.broccoli.domain.Ingredient;
 
-import com.ajhenri.broccoli.meal.MealRepository;
-import com.ajhenri.broccoli.schedule.ScheduleRepository;
-import com.ajhenri.broccoli.ingredient.IngredientRepository;
+import com.ajhenri.broccoli.repository.MealRepository;
+import com.ajhenri.broccoli.repository.ScheduleRepository;
+import com.ajhenri.broccoli.repository.IngredientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

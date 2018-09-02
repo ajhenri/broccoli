@@ -1,5 +1,6 @@
-package com.ajhenri.broccoli.schedule;
+package com.ajhenri.broccoli.domain;
 
+import com.ajhenri.broccoli.domain.Meal;
 import com.ajhenri.broccoli.utilities.serializers.DateDeserializer;
 import com.ajhenri.broccoli.utilities.serializers.DateSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -14,6 +15,8 @@ public class Schedule {
     private int id;
     @Getter @Setter
     private int mealId;
+    @Getter @Setter
+    private Meal meal;
     @Getter @Setter
     @JsonSerialize(using = DateSerializer.class)
     @JsonDeserialize(using = DateDeserializer.class)

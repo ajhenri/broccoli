@@ -1,5 +1,7 @@
-package com.ajhenri.broccoli.meal;
+package com.ajhenri.broccoli.repository;
 
+import com.ajhenri.broccoli.domain.Meal;
+import com.ajhenri.broccoli.mapper.MealMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,7 +11,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 @Repository
-public class MealRepository implements MealDAO{
+public class MealRepository implements MealDAO {
 
     private DataSource dataSource;
     @Autowired

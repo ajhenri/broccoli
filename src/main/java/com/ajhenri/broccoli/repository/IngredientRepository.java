@@ -1,5 +1,7 @@
-package com.ajhenri.broccoli.ingredient;
+package com.ajhenri.broccoli.repository;
 
+import com.ajhenri.broccoli.domain.Ingredient;
+import com.ajhenri.broccoli.mapper.IngredientMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

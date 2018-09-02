@@ -1,7 +1,9 @@
-package com.ajhenri.broccoli.meal;
+package com.ajhenri.broccoli.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.ajhenri.broccoli.domain.Meal;
 import org.springframework.jdbc.core.RowMapper;
 
 public class MealMapper implements RowMapper<Meal> {

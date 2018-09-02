@@ -1,4 +1,6 @@
-package com.ajhenri.broccoli.meal;
+package com.ajhenri.broccoli.repository;
+
+import com.ajhenri.broccoli.domain.Meal;
 
 import java.util.List;
 import javax.sql.DataSource;

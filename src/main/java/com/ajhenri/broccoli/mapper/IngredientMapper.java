@@ -1,5 +1,6 @@
-package com.ajhenri.broccoli.ingredient;
+package com.ajhenri.broccoli.mapper;
 
+import com.ajhenri.broccoli.domain.Ingredient;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
