@@ -3,8 +3,10 @@ package com.ajhenri.broccoli.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
@@ -22,6 +24,7 @@ import javax.sql.DataSource;
 public class Oauth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
+    @Qualifier("authenticationManagerBean")
     private AuthenticationManager authManager;
 
     @Autowired
@@ -34,7 +37,7 @@ public class Oauth2Config extends AuthorizationServerConfigurerAdapter {
     }
 
     @Bean
-    public JdbcTokenStore tokenStore(){
+    public TokenStore tokenStore(){
         return new JdbcTokenStore(dataSource);
     }
 
@@ -47,7 +50,6 @@ public class Oauth2Config extends AuthorizationServerConfigurerAdapter {
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.passwordEncoder(passwordEncoder);
     }
-
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception{

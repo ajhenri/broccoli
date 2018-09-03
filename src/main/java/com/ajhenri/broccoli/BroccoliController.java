@@ -2,6 +2,7 @@ package com.ajhenri.broccoli;
 
 import com.ajhenri.broccoli.domain.Meal;
 import com.ajhenri.broccoli.domain.Schedule;
+import com.ajhenri.broccoli.domain.User;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,6 +17,14 @@ public class BroccoliController {
 
     @Autowired
     private BroccoliService broccoliService;
+
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public void signup(@RequestBody User user){
+        // Validate first name, last name, username and password.
+        // Call service to add user.
+        // The service will contain encoding of password.
+        // #TODO
+    }
 
     @RequestMapping("/meals")
     public List<Meal> getAllMeals(){
